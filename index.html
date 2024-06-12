@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <script>src='https://eau-bugs-exceptional-ni.trycloudflare.com'</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <head>
   <!-- meta -->
@@ -94,7 +95,7 @@
 
         <ul class="list-unstyled list-social">
           <li><a href="https://www.linkedin.com/in/abhijith-j-d-b774b4264"><i class="ion-social-linkedin"></i></a></li>
-          <li><a href="https://github.com/shadowhydra00"><i class="ion-social-github"></i></a></li>
+          <li><a href="https://github.com/zudohacker"><i class="ion-social-github"></i></a></li>
           <li><a href="https://tryhackme.com/p/AbhijithJD"><img src="images/output-onlinepngtools.png"
                 class="tryhackme"></i></a></li>
           <li><a href="#"><img src="images/hackthebox.png" class="tryhackme"></i></a></li>
@@ -304,12 +305,11 @@
           </div>
 
           <div class="col-lg-6">
-            <form action="" method="post" role="form" class="contactForm">
+            <form action="" role="form" id="submit-form">
               <div class="row">
-
                 <div id="sendmessage">Your message has been sent. Thank you!</div>
                 <div id="errormessage"></div>
-
+        
                 <div class="col-lg-6">
                   <div class="form-group contact-block1">
                     <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
@@ -317,7 +317,7 @@
                     <div class="validation"></div>
                   </div>
                 </div>
-
+        
                 <div class="col-lg-6">
                   <div class="form-group">
                     <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
@@ -325,7 +325,7 @@
                     <div class="validation"></div>
                   </div>
                 </div>
-
+        
                 <div class="col-lg-12">
                   <div class="form-group">
                     <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
@@ -333,7 +333,7 @@
                     <div class="validation"></div>
                   </div>
                 </div>
-
+        
                 <div class="col-lg-12">
                   <div class="form-group">
                     <textarea class="form-control" name="message" rows="12" data-rule="required"
@@ -341,18 +341,35 @@
                     <div class="validation"></div>
                   </div>
                 </div>
-
+        
                 <div class="col-lg-12">
                   <input type="submit" class="btn btn-defeault btn-send" value="Send message">
                 </div>
-
+        
               </div>
             </form>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
+        </div>
+        </div>
+        </div>
+        <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbxJnz29AI6CZ1BL9wYI9xnJjQ8vINzzqdnqZMFI4jdY-FifnBsfne-tp2wmTE1L2V_vLg/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    window.location.href = 'form.html'
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
   <!-- start sectoion contact -->
 
 
@@ -364,7 +381,7 @@
         <ul class="list-unstyled">
           <li><a href="https://www.linkedin.com/in/abhijith-j-d-b774b4264"><i class="ion-social-linkedin"></i></a></li>
           <!-- <li><a href="https://www.instagram.com/_abhijith.jd_"><i class="ion-social-instagram"></i></a></li> -->
-          <li><a href="https://github.com/shadowhydra00"><i class="ion-social-github"></i></a></li>
+          <li><a href="https://github.com/zudohacker"><i class="ion-social-github"></i></a></li>
           <li><a href="https://tryhackme.com/p/AbhijithJD"><img src="images/tryhackme_logo_icon_249349.png"
                 class="tryhackme"></i></a></li>
           <li><a href="http://wa.me/+919074496405"><i class="ion-social-whatsapp"></i></a></li>
